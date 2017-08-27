@@ -1,5 +1,6 @@
 package com.example.anirudh.buttertoast;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Button info = (Button) findViewById(R.id.button2);
         Button warning = (Button) findViewById(R.id.button);
         Button error = (Button) findViewById(R.id.button3) ;
+        Button success = (Button) findViewById(R.id.button4) ;
 
             info.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -51,6 +53,19 @@ public class MainActivity extends AppCompatActivity {
                     ).show();
                 }
             });
+        success.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ButterToast.successToast(MainActivity.this , "Success" , Toast.LENGTH_LONG).show(); ;
+            }
+        });
+
+
+                 new ButterToast.Builder(this)
+                .setColor(Color.GREEN)
+                .setText("BuilderToast").makeText().show();
+
+
 
 
     }
