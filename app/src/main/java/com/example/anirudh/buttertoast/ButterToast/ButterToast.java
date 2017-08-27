@@ -48,25 +48,35 @@ public class ButterToast {
        //user cannot construct reference
     }
 
+    //defaultToast
     public static Toast defaultToast(Context context , CharSequence text , int duration){
         return Toast.makeText(context ,text ,duration) ;
     }
+
+    //Success Toast
+
     public static Toast successToast(@NonNull Context context , CharSequence text , int duration){
         return successToast(context , text , duration , DEFAULT_TYPEFACE , DEFAULT_CORNER_RADIUS) ;
     }
 
-    public static Toast successToast(@NonNull Context context , CharSequence text , int duration , @Nullable Typeface tp){
+    public static Toast successToast(@NonNull Context context , CharSequence text , int duration ,
+                                     @Nullable Typeface tp){
 
         return custom(context ,text , context.getResources().getDrawable(R.drawable.ic_check_white_36dp) ,
-                SUCCESS_COLOR ,duration , R.drawable.background_info , tp == null ? DEFAULT_TYPEFACE : tp , DEFAULT_CORNER_RADIUS) ;
+                SUCCESS_COLOR ,duration , R.drawable.background_info , tp == null ? DEFAULT_TYPEFACE : tp
+                , DEFAULT_CORNER_RADIUS) ;
     }
 
-    public static Toast successToast(@NonNull Context context , CharSequence text , int duration , @Nullable Typeface tp ,
-                                      @NonNull float cornerRadius){
+    public static Toast successToast(@NonNull Context context , CharSequence text , int duration ,
+                                     @Nullable Typeface tp , @NonNull float cornerRadius){
 
         return custom(context ,text , context.getResources().getDrawable(R.drawable.ic_check_white_36dp) ,
-                SUCCESS_COLOR ,duration , R.drawable.background_info , tp == null ? DEFAULT_TYPEFACE : tp , cornerRadius) ;
+                SUCCESS_COLOR ,duration , R.drawable.background_info ,
+                tp == null ? DEFAULT_TYPEFACE : tp , cornerRadius) ;
     }
+
+    // Error toast
+
     public static Toast errorToast(Context context , CharSequence text , int duration){
 
         return errorToast(context , text , duration , DEFAULT_TYPEFACE  , DEFAULT_CORNER_RADIUS) ;
@@ -80,6 +90,9 @@ public class ButterToast {
       return custom(context , text , context.getResources().getDrawable(R.drawable.ic_cancel_white_36dp) ,
                 ERROR_COLOR , duration , R.drawable.background_error , tp ,cornerRadius) ;
     }
+
+    //Warning toast
+
     public static Toast warningToast(Context context , CharSequence text , int duration ){
         return warningToast(context , text , duration , DEFAULT_TYPEFACE , DEFAULT_CORNER_RADIUS) ;
     }
@@ -95,6 +108,7 @@ public class ButterToast {
                 , R.drawable.background_warning , tp , cornerRadius) ;
     }
 
+    //info toast
     public static Toast infoToast(Context context , CharSequence text , int duration){
         return infoToast(context , text , duration , DEFAULT_TYPEFACE , DEFAULT_CORNER_RADIUS);
     }
@@ -108,17 +122,22 @@ public class ButterToast {
                 , R.drawable.background_info , tp == null ? DEFAULT_TYPEFACE : tp , cornerRadius) ;
     }
 
+    //Custom Toast
+
     public static Toast custom(Context context , CharSequence text , @Nullable Drawable icon ,
                                @ColorInt int color, int duration , @DrawableRes int resid){
         return custom(context, text, icon, color , duration, resid ,DEFAULT_TYPEFACE , DEFAULT_CORNER_RADIUS ) ;
     }
-    public static Toast custom(@NonNull Context context , CharSequence text , @Nullable Drawable icon , @ColorInt int backgroundColor ,
-                               int duration , @DrawableRes int resid  , Typeface tp , float cornerRadius){
-        return custom(context, text, icon, backgroundColor, duration, resid, tp, cornerRadius , DEFAULT_TEXT_COLOR , DEFAULT_TEXT_SIZE) ;
+    public static Toast custom(@NonNull Context context , CharSequence text , @Nullable Drawable icon ,
+                               @ColorInt int backgroundColor , int duration , @DrawableRes int resid  ,
+                               Typeface tp , float cornerRadius){
+        return custom(context, text, icon, backgroundColor, duration, resid, tp, cornerRadius ,
+                DEFAULT_TEXT_COLOR , DEFAULT_TEXT_SIZE) ;
     }
-    public static Toast custom(@NonNull Context context , CharSequence text , @Nullable Drawable icon , @ColorInt int backgroundColor ,
-                               int duration , @DrawableRes int resid  , @Nullable Typeface tp ,
-                               float cornerRadius , @ColorInt int textColor , float textSize){
+    public static Toast custom(@NonNull Context context , CharSequence text , @Nullable Drawable icon ,
+                               @ColorInt int backgroundColor , int duration , @DrawableRes int resid  ,
+                               @Nullable Typeface tp , float cornerRadius ,
+                               @ColorInt int textColor , float textSize){
         Toast toast  = new Toast(context);
 
         View layout = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE))
@@ -177,6 +196,10 @@ public class ButterToast {
         }
         public Builder setIcon (Drawable icon){
             this.icon = icon ;
+            return this ;
+        }
+        public Builder setShape(@DrawableRes int shapeResId){
+            this.shapeResId = shapeResId ;
             return this ;
         }
         public Builder setTextSize(float textSize){
