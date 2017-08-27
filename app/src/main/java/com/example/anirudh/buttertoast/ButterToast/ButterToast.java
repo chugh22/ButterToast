@@ -40,7 +40,7 @@ public class ButterToast {
     public static final int NORMAL_COLOR = Color.parseColor("#353A3E") ;
     public static final Typeface DEFAULT_TYPEFACE = Typeface.DEFAULT_BOLD ;
     public static final float DEFAULT_CORNER_RADIUS =  80 ;
-    public static final float DEFAULT_TEXT_SIZE = 24 ;
+    public static final float DEFAULT_TEXT_SIZE = 16 ;
     public static final int DEFAULT_TEXT_COLOR = Color.WHITE ;
 
 
@@ -51,7 +51,7 @@ public class ButterToast {
     public static Toast defaultToast(Context context , CharSequence text , int duration){
         return Toast.makeText(context ,text ,duration) ;
     }
-    public static Toast successToast(@NonNull Context context , @NonNull CharSequence text , int duration){
+    public static Toast successToast(@NonNull Context context , CharSequence text , int duration){
         return successToast(context , text , duration , DEFAULT_TYPEFACE , DEFAULT_CORNER_RADIUS) ;
     }
 

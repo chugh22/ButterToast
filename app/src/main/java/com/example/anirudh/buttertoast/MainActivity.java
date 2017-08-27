@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
                             "My custom toast" ,
                             Toast.LENGTH_LONG
                     ).show();
+
                 }
             });
             warning.setOnClickListener(new View.OnClickListener() {
