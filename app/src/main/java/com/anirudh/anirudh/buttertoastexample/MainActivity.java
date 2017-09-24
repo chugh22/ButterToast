@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.anirudh.anirudh.buttertoastexample.ButterToastExample.ButterToast;
+import com.anirudh.buttertoast.*;
 
 public class MainActivity extends AppCompatActivity {
 
