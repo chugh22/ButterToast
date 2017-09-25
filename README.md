@@ -20,7 +20,7 @@ Add this to your modules `build.gradle` file
 
 ```
 dependencies {
-	        compile 'com.github.chugh22:ButterToast:0.1.0'
+	        compile 'com.github.chugh22:ButterToast:0.1.1'
 	}
 
 ```
