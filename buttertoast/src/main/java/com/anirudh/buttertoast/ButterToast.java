@@ -238,7 +238,7 @@ public class ButterToast {
         }
 
         public Builder setTextColor(@ColorInt int textColor) {
-            this.setTextColor(textColor);
+            this.textColor = textColor;
             return this;
         }
 

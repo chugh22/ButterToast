@@ -1,6 +1,8 @@
 package com.anirudh.anirudh.buttertoastexample;
 
 import android.graphics.Color;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.Shape;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         Button warning = (Button) findViewById(R.id.button);
         Button error = (Button) findViewById(R.id.button3) ;
         Button success = (Button) findViewById(R.id.button4) ;
+        Button custom1 = (Button) findViewById(R.id.btnCustom1) ;
+        Button custom2 = (Button) findViewById(R.id.btnCustom2) ;
 
             info.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -57,9 +61,25 @@ public class MainActivity extends AppCompatActivity {
                 ButterToast.successToast(MainActivity.this , "Success" , Toast.LENGTH_LONG).show(); ;
             }
         });
-                new ButterToast.Builder(this)
-                .setBackgroundColor(Color.GREEN)
-                .setText("BuilderToast").makeToast().show();
+        custom1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ButterToast.Builder(MainActivity.this)
+                        .build()
+                        .setCornerRadius(10.5f)
+                        .setTextColor(Color.BLUE)
+                        .setText("Custom toast").makeToast().show() ;
+            }
+        });
+        custom2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ButterToast.Builder(MainActivity.this)
+                        .setBackgroundColor(Color.GREEN)
+                        .setText("BuilderToast").makeToast().show();
+            }
+        });
+
 
 
 
