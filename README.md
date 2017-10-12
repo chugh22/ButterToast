@@ -3,6 +3,12 @@
 
  Under development 
 
+## Some Screenshots
+<img src = "https://github.com/chugh22/ButterToast/blob/master/screenshots/error.png">
+<img src = "https://github.com/chugh22/ButterToast/blob/master/screenshots/warning.png">
+<img src = "https://github.com/chugh22/ButterToast/blob/master/screenshots/info.png">
+<img src = "https://github.com/chugh22/ButterToast/blob/master/screenshots/success.png">
+
 ### Prerequisites
 Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
 ```gradle
