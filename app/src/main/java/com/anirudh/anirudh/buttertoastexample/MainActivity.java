@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     ButterToast.infoToast(
                             MainActivity.this ,
-                            "My custom toast" ,
+                            "Info   " ,
                             Toast.LENGTH_LONG
                     ).show();
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     ButterToast.warningToast(
                             MainActivity.this ,
-                            "My custom toast" ,
+                            "Warning" ,
                             Toast.LENGTH_LONG
                     ).show();
                 }
