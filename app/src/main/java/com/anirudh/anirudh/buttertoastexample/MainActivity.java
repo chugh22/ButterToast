@@ -67,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
                 new ButterToast.Builder(MainActivity.this)
                         .build()
                         .setCornerRadius(10.5f)
-                        .setTextColor(Color.BLUE)
+                        .setTextColor(Color.WHITE)
+                        .setIcon(MainActivity.this.getResources().getDrawable(R.drawable.ic_check_white_36dp))
                         .setText("Custom toast").makeToast().show() ;
             }
         });

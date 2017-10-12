@@ -8,6 +8,8 @@
 <img src = "https://github.com/chugh22/ButterToast/blob/master/screenshots/warning.png">
 <img src = "https://github.com/chugh22/ButterToast/blob/master/screenshots/info.png">
 <img src = "https://github.com/chugh22/ButterToast/blob/master/screenshots/success.png">
+<img src = "https://github.com/chugh22/ButterToast/blob/master/screenshots/custom1.png">
+
 
 ### Prerequisites
 Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
@@ -29,4 +31,15 @@ dependencies {
 	        compile 'com.github.chugh22:ButterToast:0.1.1'
 	}
 
+```
+
+### Using builder Functions
+
+```
+new ButterToast.Builder(MainActivity.this)
+                        .build()
+                        .setCornerRadius(10.5f)
+                        .setTextColor(Color.WHITE)
+                        .setIcon(MainActivity.this.getResources().getDrawable(R.drawable.ic_check_white_36dp))
+                        .setText("Custom toast").makeToast().show() ;
 ```
