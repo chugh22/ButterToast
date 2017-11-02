@@ -36,10 +36,10 @@ dependencies {
 ### Using builder Functions
 
 ```
-new ButterToast.Builder(MainActivity.this)
+new ButterToast.Builder(<Context>)
                         .build()
                         .setCornerRadius(10.5f)
                         .setTextColor(Color.WHITE)
-                        .setIcon(MainActivity.this.getResources().getDrawable(R.drawable.ic_check_white_36dp))
+                        .setIcon(<Drawable>)
                         .setText("Custom toast").makeToast().show() ;
 ```
